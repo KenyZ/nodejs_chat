@@ -1,0 +1,27 @@
+
+<div class="container-fluid mt-5" style="max-width: 35rem">
+    <h1 class="display-2 text-center mb-5 mt-3">Welcome</h1>
+    <form method="POST" action="/loggin" class="p-4 border shadow rounded" >
+        <h4 class="text-center text-secondary">You must log in</h4>
+        <% if(typeof err_msg != 'undefined' ) { %>
+            <div class="alert alert-danger pt-1 pb-1">
+                <%= err_msg %>
+            </div>
+        <% } %>
+        <div class="form-group">
+            <label for="username">Username :</label>
+            <input class="form-control" type="text" name="username" id="username" placeholder="Type your username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password :</label>
+            <input class="form-control" type="password" name="password" id="password" placeholder="Type your password">
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-success">Enter</button>
+        </div>
+        <p class="text-right mb-0 mt-2">
+            <a href="/register" class="text-right">Register now</a>
+        </p>
+    </form>
+
+</div>

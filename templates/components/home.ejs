@@ -1,0 +1,24 @@
+
+<%- include('header') %>
+<div class="container mt-5">
+
+    <h1 class="display-4">Hello <em class="text-success"><%= userSession.username %></em></h1>
+    <hr>
+
+    <div class="container-fluid border rounded shadow mt-5" style="max-width: 35rem">
+    
+        <h2 class="text-center mb-2 mt-2">Rooms</h2>
+
+        <div class="container-fluid p-3">
+            <% for(let i = 0; i < rooms.length; i++) {%>
+                <a href="/room/<%= rooms[i].id %>" class="nav-link border rounded bg-light mb-2">
+                    <small class="badge badge-primary mr-3"><%= rooms[i].users_in %></small>
+                    <%= rooms[i].name %>
+                    <small class="float-right mr-2 text-secondary">Last message <em><%= getDateSince(rooms[i].last_message) %></em></small>
+                </a>
+            <% } %>
+        </div>
+
+    </div>
+
+</div>

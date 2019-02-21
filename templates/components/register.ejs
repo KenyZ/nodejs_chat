@@ -1,0 +1,32 @@
+
+<div class="container-fluid mt-5" style="max-width: 35rem">
+
+    <%# <h1 class="display-2 text-center mb-5 mt-3">Register</h1> %>
+
+    <form method="POST" action="/register" class="p-4 border shadow rounded" >
+        <h4 class="text-center text-secondary">Create your account</h4>
+        <% if(typeof errors != 'undefined' && errors.length > 0) { %>
+            <div class="alert alert-danger pt-1 pb-1">
+                <% for(let i = 0; i < errors.length;i++) {%>
+                    <li><%= errors[i] %></li>
+                <% }%>
+            </div>
+        <% } %>
+        <div class="form-group">
+            <label for="username">Username :</label>
+            <input class="form-control" type="text" name="username" id="username" placeholder="Type your username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password :</label>
+            <input class="form-control" type="password" name="password" id="password" placeholder="Type your password">
+            <input class="form-control mt-3" type="password" name="password2" id="password2" placeholder="Confirm your password">
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-success">Register</button>
+        </div>
+        <p class="text-right mb-0 mt-2">
+            <a href="/loggin" class="text-right">I already have an account</a>
+        </p>
+    </form>
+
+</div>
