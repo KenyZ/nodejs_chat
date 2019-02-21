@@ -9,7 +9,7 @@ In order to start the server, run :
 ````
 node src/server.js
 ````
-Run the server and watch nodeJS files (so the server restart automatically they change)
+Run the server and watch nodeJS files (so the server restart automatically when they change)
 ````
 nodemon src/server.js
 ````
