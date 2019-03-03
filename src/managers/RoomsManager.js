@@ -11,7 +11,7 @@ module.exports = class RoomsManager{
 
         this.connection.query('SELECT r.name, r.users_in, r.id, r.name, Max(m.created_at) as last_message FROM messenger_chat r INNER JOIN messenger_messages m ON m.roomId = r.id GROUP BY r.id, r.name', (err, data) => { 
             if(err) throw err;
-            console.log('has fetchd all rooms length = ' + data.length)
+            console.log('has fetched all rooms length = ' + data.length)
             callback(data)
         })
     }
